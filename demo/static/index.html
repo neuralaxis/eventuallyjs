@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Test</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<title>Angular Tests</title>
+	<link href="style/main.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-	<a href="angular.html">Angular JS</a>
+<body ng-app="demo">	
+	<main ng-controller="OrdersController">
+		<form>		
+			<button class="submit-order" ng-click="submitOrder()">Submit Some Order</button>
+		</form>
+		<div class="orders">
+			<div class="order-item" ng-repeat="order in orders" ng-class="{'saving':isSaving(order), 'deleting':isDeleting(order)}">
+				<div class="id">{{order.id}}</div>
+				<div class="actions" ng-show="canDelete(order)">
+					<button ng-click="cancelOrder(order)">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="bower_components/angular/angular.js"></script>	
+	<script src="src/angular-eventually.js"></script>	
+	<script>
+		angular.module('demo', ['ngEventually'])
+		.controller('OrdersController', function($scope, $http, Eventually) {
+			Eventually.setup(
+					{
+					'saved': function(id, callback) {
+						$http.get('/api/orders/' + id).success(function(data) {
+							callback(data && data.status == 'Saved', data);
+						}).error(function(data,status) {
+							callback(false);
+						});
+					},
+					'deleted': function(id, callback) {
+						$http.get('/api/orders/' + id).success(function(data) {
+							callback(false);
+						}).error(function(data,status) {
+							callback(status == 404);
+						});
+					}
+			})
+			Eventually.interval = 1000;
+
+			$scope.loadOrders = function() {
+				$http.get('/api/orders').success(function(data) {
+					$scope.orders = data;
+				});
+			};
+
+			$scope.submitOrder = function() {
+				$http.post('/api/orders').success(function(data) {
+					Eventually.saved(data.id, $scope.loadOrders);
+					$scope.orders.push(data);
+				});
+			};
+
+			$scope.cancelOrder = function(order) {
+				$http.delete('/api/orders/' + order.id).success(function() {
+					order.status = 'Deleting';
+					Eventually.deleted(order.id, $scope.loadOrders);
+				});
+			}
+
+			$scope.isSaving = function(order) {
+				return order.status == 'Saving';
+			}
+
+			$scope.isDeleting = function(order) {
+				return order.status == 'Deleting';
+			}
+
+			$scope.canDelete = function(order) {
+				return order.status == 'Saved';
+			}
+
+			$scope.loadOrders();
+		});
+
+	</script>
 </body>
+
 </html>

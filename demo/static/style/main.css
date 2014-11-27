@@ -1,3 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body,button {
+	font-family: Lato, Helvetica;
+	font-size:18px;
+	margin:22px;
+}
 
 .submit-order {
 	text-align:center;
@@ -10,7 +17,9 @@
 .order-item {
 	display:flex;
 	flex-direction:column;
-	min-width:250px;
+	justify-content:space-between;
+	min-width:150px;
+	height:150px;
 	margin:12px;
 	padding:12px;
 	text-align:center;
@@ -20,18 +29,20 @@
 }
 
 .order-item .id {
-
+	font-size:24px;
 }
 .order-item .actions {
 
 }
 
+.saving, .deleting {	
+	background:url('ajax-loader.gif') no-repeat center;
+}
 .saving {
 	color:#ccc;
-	background:url('ajax-loader.gif') no-repeat center;
 }
 .deleting {
 	text-decoration:line-through;
 	color:red;
-	background:url('ajax-loader.gif') no-repeat center;
+	opacity:0.3;
 }

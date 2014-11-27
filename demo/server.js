@@ -15,10 +15,10 @@ var orders = {
 		var order = null;
 		self.lastId += 1;
 		order = {id:self.lastId, status:'Saving'};		
-		self.list.push(order);
 		var delayedProcess = function() {
 			setTimeout(function() {
 				order.status = 'Saved';
+				self.list.push(order);
 			}, 5000);
 		};
 		delayedProcess();
