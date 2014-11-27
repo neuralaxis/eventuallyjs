@@ -1,0 +1,15 @@
+{
+  "name": "static",
+  "version": "0.0.0",
+  "authors": [
+    "Abe <nebula31a@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

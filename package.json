@@ -1,0 +1,26 @@
+{
+  "name": "eventuallyjs",
+  "version": "0.0.0",
+  "description": "Utility service for eventually consistent application frontends",
+  "main": "demo/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuralaxis/eventuallyjs"
+  },
+  "keywords": [
+    "angularjs"
+  ],
+  "author": "Ibrahim Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neuralaxis/eventuallyjs/issues"
+  },
+  "homepage": "https://github.com/neuralaxis/eventuallyjs",
+  "dependencies": {
+    "gulp-uglify": "~1.0.1",
+    "gulp": "~3.8.10"
+  }
+}
