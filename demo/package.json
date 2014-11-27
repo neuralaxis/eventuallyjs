@@ -1,5 +1,5 @@
 {
-  "name": "functional",
+  "name": "Demo application for eventuallyjs",
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ibrahim Rodriguez",
+  "license": "MIT",
   "dependencies": {
     "restify": "~2.8.3"
   }
