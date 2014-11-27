@@ -1,5 +1,4 @@
 (function(window, angular) {
-  console.log('registering');
   'use strict';
   var Eventually = {
       interval: 1000,

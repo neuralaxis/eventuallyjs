@@ -26,9 +26,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
-<<<<<<< HEAD
 
 #bower
 bower_components
-=======
->>>>>>> eb143091d4b726415eef96195c5b70c5c19e694a
+build

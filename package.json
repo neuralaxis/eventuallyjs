@@ -14,13 +14,15 @@
     "angularjs"
   ],
   "author": "Ibrahim Rodriguez",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/neuralaxis/eventuallyjs/issues"
   },
   "homepage": "https://github.com/neuralaxis/eventuallyjs",
-  "dependencies": {
+  "devDependencies": {
     "gulp-uglify": "~1.0.1",
-    "gulp": "~3.8.10"
+    "gulp": "~3.8.10",
+    "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.4.2"
   }
 }
