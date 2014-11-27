@@ -4,8 +4,7 @@ eventuallyjs
 Simple polling Angularjs service for eventually consistent system frontends:
 
 
-Sometimes, when a user requests an action such as saving a new record, the server does not fully process
-the request immediately - as in, the record is not persisted to a database, for example - but rather queues it for execution by another process.
+Sometimes, when a user requests an action such as saving a new record through a user interface, the server does not fully process the request immediately - as in, the record is not persisted to a database, for example - but rather queues it for execution by another process.
 
 This pattern is frequently used by [CQRS-style architectures](http://martinfowler.com/bliki/CQRS.html). The challenge for the UI layer then, is that in certain cases we would like to clue the user to the fact that the item is not exactly processed yet, and to let them know when it is. 
 
@@ -25,7 +24,7 @@ Eventually.setup({
 
 Then, whenever we perform a command which will "eventually" complete, we call a function on the Eventually instance with our event name (in this case *saved*), passing in first the arguments to the checker function, and last the "success" function. Success is defined as the checker function calling its callback with a *true* argument:
 
-'''javascript
+```javascript
 $scope.submitOrder = function() {
 				$http.post('/api/orders').success(function(data) {
 					Eventually.saved(data.id, $scope.loadOrders);
@@ -34,15 +33,14 @@ $scope.submitOrder = function() {
 			};
 ```
 
-
-Demo application:
+## Demo application:
 
 ```bash
 cd demo && npm init && cd static && bower init
 node server.js
 ```
 
-Building:
+## Building:
 ```bash
 npm install
 gulp
