@@ -1,7 +1,6 @@
-eventuallyjs
-============
+# eventuallyjs
 
-Angularjs service for polling eventually consistent systems:
+## An Angularjs service for polling eventually consistent systems.
 
 Sometimes when a user performs an action such as clicking "Save" for a new record, the server does not fully process the request immediately upon responding - as in, the record is not yet committed to a database, for example - but rather queues it for execution by another process.
 
