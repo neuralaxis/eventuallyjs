@@ -33,7 +33,6 @@ This will begin calling the registered poll function on an interval. The method 
 
 The poll function is called every 1s by default until we succeed or fail to call the callback function from within it. 
 
-
 Begin polling:
 
 ```javascript
@@ -43,6 +42,10 @@ $scope.submitOrder = function() {
 					$scope.orders.push(data);
 				});
 			};
+```
+
+```
+I realize the cool kids are doing websockets these days for this type of problem. If you've ever had to support websockets in an enterprise network, under CORS, or in the cloud, then you know that solution isn't exactly a walk in the park.
 ```
 
 ## Demo application:
