@@ -44,9 +44,8 @@ $scope.submitOrder = function() {
 			};
 ```
 
-```
-I realize the cool kids are doing websockets these days for this type of problem. If you've ever had to support websockets in an enterprise network, under CORS, or in the cloud, then you know that solution isn't exactly a walk in the park.
-```
+> I realize the cool kids are doing websockets these days for this type of problem. If you've ever had to support websockets in an enterprise network, under CORS, or in the cloud, then you know that solution isn't exactly a walk in the park.
+
 
 ## Demo application:
 
