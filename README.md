@@ -26,7 +26,7 @@ Eventually.setup({
 This registers a "saved" function on the instance... 
 
 ```javascript
-Eventually.saved()
+Eventually.saved(...)
 ```
 
 This will begin calling the registered poll function on an interval. The method can take any number of arguments, which will be passed to the poll function (in our case, *id*), but the last argument must be the callback to invoke when the poll reports success.
