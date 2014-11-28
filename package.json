@@ -1,6 +1,6 @@
 {
   "name": "eventuallyjs",
-  "version": "0.0.0",
+  "version": "0.0.9",
   "description": "Utility service for eventually consistent application frontends",
   "main": "demo/server.js",
   "scripts": {

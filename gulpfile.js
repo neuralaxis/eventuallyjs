@@ -16,9 +16,9 @@ var banner =
 gulp.task('default', function() {
 	return gulp.src('src/angular-eventually.js')
 		.pipe(header(banner, {pkg:pkg}))
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('.'))
 		.pipe(uglify())
 		.pipe(header(banner, {pkg:pkg}))
 		.pipe(concat('angular-eventually.min.js'))
-		.pipe(gulp.dest('build'));
+		.pipe(gulp.dest('.'));
 });

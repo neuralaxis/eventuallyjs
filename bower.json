@@ -1,0 +1,15 @@
+{
+  "name": "angular-eventually",
+  "version": "0.0.9",
+  "main": [ "angular-eventually.js", "angular-eventually.min.js"],
+  "ignore":
+  [
+    "README*",
+    "LICENSE*",
+    "src",
+    "demo",
+    "package.json",
+    "bower.json",
+    "gulpfile.js"
+  ]
+}
