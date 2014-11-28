@@ -1,5 +1,5 @@
 {
-  "name": "Demo application for eventuallyjs",
+  "name": "eventuallyjs-demo",
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
@@ -11,5 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "restify": "~2.8.3"
-  }
+  },
+  "private":true
 }
